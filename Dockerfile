@@ -6,8 +6,7 @@ ENV LC_ALL en_US.UTF-8
 WORKDIR /root
 #
 RUN alias ll='ls -l --color=auto'
-RUN rpm -Uvh http://mirror.webtatic.com/yum/el7/epel-release.rpm
-RUN rpm -Uvh http://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-8.noarch.rpm
 RUN yum install -y net-tools openssh openssh-server openssh-clients  tar gzip bzip2 wget
 RUN ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_dsa_key
 RUN ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key
